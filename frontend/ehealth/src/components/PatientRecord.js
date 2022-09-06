@@ -1,6 +1,8 @@
 import React from "react";
-// import {NavLink } from "react-router-dom";
-// import { FaHandHoldingMedical} from "react-icons/fa";
+
+import { FcSearch} from "react-icons/fc";
+
+const logo = require('../images/img4.png')
 
 
 
@@ -8,7 +10,22 @@ import React from "react";
 function PatientRecord (){
     return (
         <div className="patientrecord">
-            <h1>PatientRecord</h1>
+
+            <div className="header">
+             <img src={logo} alt='wewe' className="age" /> 
+             <h3>PATIENT RECORDS</h3>
+           </div>
+
+           <form>
+               <input type="text" placeholder="Search.." name="search"/>
+               <button type="submit"><FcSearch/></button>
+            </form>
+            <div className="records">
+                <span>meee</span>
+                <span>meee</span>
+                <span>meee</span>
+
+            </div>
         </div>
       
     );

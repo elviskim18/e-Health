@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ImBin} from "react-icons/im";
+import { FcCheckmark} from "react-icons/fc";
 
 const logo = require('../images/img3.png')
 
@@ -17,17 +17,17 @@ function Appointment (){
            <div className="appoints">
                <div className="notify">
                    <span>Title  <em>Time</em></span>
-                   <p><ImBin/></p>
+                   <p><FcCheckmark/></p>
                </div>
 
                <div className="notify">
                    <span>Title  <em>Time</em></span>
-                   <p><ImBin/></p>
+                   <p><FcCheckmark/></p>
                </div>
 
                <div className="notify">
                    <span>Title  <em>Time</em></span>
-                   <p><ImBin/></p>
+                   <p><FcCheckmark/></p>
                </div>
                
            </div>

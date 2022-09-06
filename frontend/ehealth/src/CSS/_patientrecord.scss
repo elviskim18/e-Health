@@ -1,3 +1,58 @@
 .patientrecord{
-    background-color: yellow;
+   
+    height: 100vh;
+
+    .header{
+        
+        display: flex;
+        padding-left: 20px;
+        img{
+            height: 250px;
+        }
+        h3{
+            font-weight: lighter;
+            padding-top: 20px;
+            font-size: 1.6em;
+            margin-top: 150px;
+            
+        }
+    }
+
+    form{
+        padding: 40px;
+        input{
+            padding: 15px 40px;
+            background-color: black;
+            color: white; 
+            border-radius: 3px;
+        }
+        button{
+            margin-left: 5px;
+            padding: 15px;
+            border: none;
+        }
+    }
+
+    .records{
+        padding-left: 20px;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        
+        span{
+            background-color: #D9D9D9;
+            &:hover{
+                margin-left: 1rem;
+            }
+            border: 1px solid #3e8e7a;
+            padding: 20px;
+            margin-bottom: 10px;
+            // &:before{
+            //     content: "";
+            //     width: 60px;
+            //     height: 10px;
+            //     background-color: black;
+            // }
+        }
+    }
 }
