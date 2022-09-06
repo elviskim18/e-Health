@@ -1,0 +1,15 @@
+.dashboard{
+    
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    .dleft{
+        width: 70%;
+        background-color: red;
+    }
+    .dright{
+        width: 30%;
+        background-color: aqua;
+    }
+
+}
