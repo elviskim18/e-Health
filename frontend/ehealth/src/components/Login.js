@@ -19,7 +19,7 @@ function Login() {
           <span><FaHeartbeat className='icon'/>E-AFYA</span>
           <h4>HEALTH MANAGEMENT SYSTEM</h4>
           <h2>WELCOME</h2>
-          <img src={logo} alt='wewe'/>
+          <img src={logo} alt='wewe'className='image'/>
       
       </div>
 

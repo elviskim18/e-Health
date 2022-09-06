@@ -1,6 +1,7 @@
 import React from "react";
-// import {NavLink } from "react-router-dom";
+
 // import { FaHandHoldingMedical} from "react-icons/fa";
+const logo = require('../images/img3.png')
 
 
 
@@ -8,8 +9,7 @@ import React from "react";
 function Appointment (){
     return (
         <div className="appointment">
-            
-            <h1>Appointments</h1>
+            <img src={logo} alt='wewe' className="age"/>
         </div>
       
     );
