@@ -6,18 +6,22 @@ import { RiDeleteBin5Line} from "react-icons/ri";
 const logo = require('../images/img2.png')
 
 
+
 function Dashboard (){
     return (
         <div className="dashboard">
             <div className="dleft">
+
                 <div className="hcontainer">
                     <div className="circle"></div>
+
                     <h4>HEY, JOSH</h4>
                    
                     <div className="button">
                         <button>LOGOUT</button>
                     </div>
                 </div>
+                
                 <h3>DASHBOARD</h3>
                 <div className="stats">
                     <div className="stat1">

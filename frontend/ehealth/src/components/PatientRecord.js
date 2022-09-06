@@ -24,7 +24,6 @@ function PatientRecord (){
                 <span>meee</span>
                 <span>meee</span>
                 <span>meee</span>
-
             </div>
         </div>
       
