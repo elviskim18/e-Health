@@ -1,6 +1,7 @@
 import React from "react";
 
-// import { FaHandHoldingMedical} from "react-icons/fa";
+import { ImBin} from "react-icons/im";
+
 const logo = require('../images/img3.png')
 
 
@@ -9,7 +10,29 @@ const logo = require('../images/img3.png')
 function Appointment (){
     return (
         <div className="appointment">
-            <img src={logo} alt='wewe' className="age"/>
+           <div className="header">
+             <img src={logo} alt='wewe' className="age" /> 
+             <h3>APPOINTMENTS</h3>
+           </div>
+           <div className="appoints">
+               <div className="notify">
+                   <span>Title  <em>Time</em></span>
+                   <p><ImBin/></p>
+               </div>
+
+               <div className="notify">
+                   <span>Title  <em>Time</em></span>
+                   <p><ImBin/></p>
+               </div>
+
+               <div className="notify">
+                   <span>Title  <em>Time</em></span>
+                   <p><ImBin/></p>
+               </div>
+               
+           </div>
+
+
         </div>
       
     );
