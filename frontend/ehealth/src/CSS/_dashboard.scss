@@ -101,8 +101,12 @@
             .notes{
                 display: flex;
                 flex-direction: column;
+                overflow: hidden;
+                overflow-y: auto;
+                height: 30vh;
 
-                span{
+                li{
+                    list-style: none;
                     background-color: rgb(144, 161, 220,14%);
                     padding: 20px;
                     margin-top: 10px;

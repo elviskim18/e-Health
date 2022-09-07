@@ -12,7 +12,8 @@ import axios from "axios";
 
 function Display (){
     const [patients, setPatients] = useState([])
-    const url = "http://localhost:8004/patients";
+    const [notifications, setNotifications] = useState([])
+    const url = "http://localhost:8004/notifications";
 
 
     //get patient records
@@ -20,11 +21,19 @@ function Display (){
         axios.get(url).then((resp) =>{
             const pat = resp.data
             setPatients(pat)
-            // console.log(pat) //view my patients
         })
     }
 
-    //searc patient record
+
+    //get notifications
+    function getNotifications(){
+        axios.get(url).then((resp) =>{
+            const noti = resp.data
+            setNotifications(noti)
+        })
+    }
+
+    //search patient record
     function getSearch (str){
         if (str === ""){
             getPatients()
@@ -33,10 +42,18 @@ function Display (){
             setPatients(newP)
         }
     }
+
+    //delete notification
+    function deleteNotification (id){
+        let update = patients.filter((pat) => pat.id !== id)
+        setNotifications(update);
+        axios.delete(`${url}/${id}`)
+    }
    
 
     useEffect(() =>{
         getPatients()
+        getNotifications()
 
     },[])
 
@@ -52,7 +69,7 @@ function Display (){
                 <Route  path="/newpatient" element={<Newpatient/>}/>
             
             
-                <Route  path="/dashboard" element={<Dashboard/>}/>
+                <Route  path="/dashboard" element={<Dashboard  notifications={notifications} deleteNotification={deleteNotification}/>}/>
 
                 <Route  path="/appointments" element={<Appointment/>}/>
             </Routes>

@@ -1,5 +1,4 @@
-import React from "react";
-// import {NavLink } from "react-router-dom";
+import React,{useState} from "react";
 import { BsBell} from "react-icons/bs";
 import { RiDeleteBin5Line} from "react-icons/ri";
 
@@ -7,7 +6,20 @@ const logo = require('../images/img2.png')
 
 
 
-function Dashboard (){
+function Dashboard ({notifications , deleteNotification}){
+    const [notid, setnotid] = useState("")
+
+
+    // //delete
+    // function handledelete (notification){
+    //     setnotid(notification.id)
+    //     console.log(notid)
+    // }
+
+
+
+
+
     return (
         <div className="dashboard">
             <div className="dleft">
@@ -40,12 +52,13 @@ function Dashboard (){
                 </div>
                 <div className="notifications">
                     <h4><span><BsBell/></span> NOTIFICATIONS</h4>
-                    <div className="notes">
-                        <span>NOTE 1 <em><RiDeleteBin5Line/></em></span>
-                        <span>NOTE 1 <em><RiDeleteBin5Line/></em></span>
-                        <span>NOTE 1 <em><RiDeleteBin5Line/></em></span>
-                        <span>NOTE 1 <em><RiDeleteBin5Line/></em></span>
-                    </div>
+                    <ul className="notes">
+                        {notifications.map((notification) =>(
+                            <li key={notification.id} >{notification.diagnosis}<em onClick={() => deleteNotification(notification.id) }><RiDeleteBin5Line/></em></li>
+                        ))}
+                        
+        
+                    </ul>
 
                 </div>
             </div>
