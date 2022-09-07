@@ -1,6 +1,8 @@
 import React,{useState} from "react";
-// import { FcSearch} from "react-icons/fc";
+
 import Patient from "./Patient";
+
+
 
 const logo = require('../images/img4.png')
 
@@ -9,6 +11,7 @@ const logo = require('../images/img4.png')
 
 function PatientRecord ({patients, getSearch}){
     const [searchvalue, setsearchvalue] = useState("")
+   
 
 
     function handlesearch(e) {
@@ -32,14 +35,21 @@ function PatientRecord ({patients, getSearch}){
                {/* <button type="submit"><FcSearch/></button> */}
             </form>
             
+            <div className="cont">
+                <ul className="records">
+                    {patients?.map((patient)=> (
+                        <Patient  key={patient.id} patient={patient} />
+                        
 
-            <ul className="records">
-                {patients?.map((patient)=> (
-                    <Patient  key={patient.id} patient={patient} />
-                    
+                    ))}
+                </ul>
+                <div className="disp">
+                
+               
+                </div>
 
-                ))}
-            </ul>
+            </div>
+            
            
             
         </div>

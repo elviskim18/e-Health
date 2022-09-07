@@ -131,6 +131,17 @@
       "symptoms": "High fever",
       "diagnosis": "food poisosning",
       "id": 12
+    },
+    {
+      "name": "junet",
+      "gender": "female",
+      "number": "254721780932",
+      "dob": "2022-09-01",
+      "weight": "55",
+      "bloodgroup": "b",
+      "symptoms": "High fever",
+      "diagnosis": "Stay home",
+      "id": 13
     }
   ]
 }

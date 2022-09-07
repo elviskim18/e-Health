@@ -19,6 +19,7 @@
     }
 
     form{
+        background-color: yellow;
         padding: 40px;
         input{
             padding: 15px 40px;
@@ -33,9 +34,21 @@
         }
     }   
 
+    .cont{
+        
+        display: flex;
+        flex-direction: row;
+    }
+    .disp{
+        background-color: aqua;
+        width: 50%;
+        padding-left: 10px;
+    }
+
  
 
     .records{
+        
         padding-left: 20px;
         width: 50%;
         display: flex;
