@@ -13,7 +13,7 @@ import axios from "axios";
 function Display (){
     const [patients, setPatients] = useState([])
     const [notifications, setNotifications] = useState([])
-    const url = "http://localhost:8004/notifications";
+    const url = "http://localhost:8004/patients";
 
 
     //get patient records
@@ -43,11 +43,18 @@ function Display (){
         }
     }
 
+    //add new patient
+    function addPatient(newUser){
+        axios.post(url,newUser)
+        setPatients([...patients, newUser])
+    }
+
     //delete notification
     function deleteNotification (id){
         let update = patients.filter((pat) => pat.id !== id)
         setNotifications(update);
         axios.delete(`${url}/${id}`)
+        alert("Notification deleted")
     }
    
 
@@ -66,7 +73,7 @@ function Display (){
                 <Route  path="/patientrecords" element={<PatientRecord  patients={patients} getSearch={getSearch} />}/>
             
             
-                <Route  path="/newpatient" element={<Newpatient/>}/>
+                <Route  path="/newpatient" element={<Newpatient addPatient={addPatient} />}/>
             
             
                 <Route  path="/dashboard" element={<Dashboard  notifications={notifications} deleteNotification={deleteNotification}/>}/>

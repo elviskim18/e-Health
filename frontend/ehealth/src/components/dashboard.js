@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React from "react";
 import { BsBell} from "react-icons/bs";
 import { RiDeleteBin5Line} from "react-icons/ri";
 
@@ -7,17 +7,7 @@ const logo = require('../images/img2.png')
 
 
 function Dashboard ({notifications , deleteNotification}){
-    const [notid, setnotid] = useState("")
-
-
-    // //delete
-    // function handledelete (notification){
-    //     setnotid(notification.id)
-    //     console.log(notid)
-    // }
-
-
-
+    
 
 
     return (
