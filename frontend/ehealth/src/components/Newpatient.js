@@ -16,7 +16,8 @@ function Newpatient ({addPatient}){
         weight: "",
         bloodgroup: "",
         symptoms: "",
-        diagnosis:""
+        diagnosis:"",
+        nationalId:""
     })
 
     let navigate = useNavigate();
@@ -35,7 +36,7 @@ function Newpatient ({addPatient}){
     function handleNew(event){
         event.preventDefault()
         addPatient(newInfo)
-        console.log("jn")
+        // console.log("jn")
         alert("Patient Enrolled Successfully!")
         navigate("/home/patientrecords")
         
@@ -54,6 +55,7 @@ function Newpatient ({addPatient}){
                 <input type="text" placeholder="Telephone Number" name="number" value={newInfo.number} onChange={handleChange}/>
                 <input type="date"  name="dob" placeholder="DOB" value={newInfo.dob} onChange={handleChange}/>
                 <input type="number" placeholder="Weight" name="weight" value={newInfo.weight} onChange={handleChange} />
+                <input type="number" placeholder="National Id" name="nationalId" value={newInfo.nationalId} onChange={handleChange} />
                 <label>Gender
                     <select id="gender" name="gender" value={newInfo.gender} onChange={handleChange}>
                         <option value="male">Male</option>

@@ -20,7 +20,7 @@ function Login() {
           <h4>HEALTH MANAGEMENT SYSTEM</h4>
           <h2>WELCOME</h2>
           <img src={logo} alt='wewe'className='image'/>
-      
+    
       </div>
 
       <div className="right">
