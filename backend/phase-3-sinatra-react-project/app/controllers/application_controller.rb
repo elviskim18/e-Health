@@ -5,8 +5,74 @@ class ApplicationController < Sinatra::Base
  
 
 
-  get "/" do
-    { message: "Good luck with your project!" }.to_json
+  # get "/" do
+  #   { message: "Good luck with your project!" }.to_json
+  # end
+
+
+  post "/login" do
+    user = Doctor.find_by(email: params[:email], password:params[:password])
+    if user.nil? 
+      response = {response:"User doesnt exist!"}
+      return response.to_json
+    else 
+      return user.to_json
+    end
+
   end
+
+  post "/register" do
+    user = Doctor.find_by(email: params[:email])
+    if user.nil?
+      hash = params.reject { |k, v| v.blank? }
+      new_user = Doctor.create(hash)
+      return new_user.to_json
+    else
+      response = {response:"User exists!"}
+      return response.to_json
+    end
+    
+  end
+
+
+  get "/patients" do
+    Patient.all.to_json
+  end
+
+  post "/newPatient" do
+    user = Patient.find_by(national_id: params[:national_id])
+    if user.nil?
+      hash = params.reject { |k, v| v.blank? }
+      new_patient = Patient.create(hash)
+      return new_patient.to_json
+    else
+      response = {response:"Patient exists!"}
+      return response.to_json
+    end
+    
+  end
+
+  get "/alldoctors" do
+    Doctor.count.to_json
+  end
+
+  get "/nurses" do
+    Nurse.count.to_json
+  end
+
+  get "/myappointments/:id" do
+    selected = Doctor.find(params[:id])
+    selected.appointments.count.to_json
+  end
+
+  get "/allmyappointments/:id" do
+    selected = Doctor.find(params[:id])
+    selected.appointments.order("created_at DESC").all.to_json
+
+  end
+
+
+
+
 
 end

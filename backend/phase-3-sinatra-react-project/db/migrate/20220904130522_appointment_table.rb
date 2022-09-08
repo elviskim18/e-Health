@@ -4,6 +4,7 @@ class AppointmentTable < ActiveRecord::Migration[6.1]
       t.integer :doctor_id
       t.integer :patient_id
       t.date :date
+      t.timestamps
     end
   end
 end

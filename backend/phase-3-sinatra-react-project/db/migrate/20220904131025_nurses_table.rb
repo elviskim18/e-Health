@@ -4,6 +4,7 @@ class NursesTable < ActiveRecord::Migration[6.1]
     t.string :name
     t.integer :job_id
     t.string :email
+    t.timestamps
    end
   end
 end
