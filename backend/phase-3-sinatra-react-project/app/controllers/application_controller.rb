@@ -62,14 +62,36 @@ class ApplicationController < Sinatra::Base
 
   get "/myappointments/:id" do
     selected = Doctor.find(params[:id])
-    selected.appointments.count.to_json
+    if selected.nil?
+      response = {response:"No reply!"}
+      return response.to_json
+    else
+    return selected.appointments.count.to_json
+    end
   end
 
   get "/allmyappointments/:id" do
     selected = Doctor.find(params[:id])
-    selected.appointments.order("created_at DESC").all.to_json
+    if selected.nil?
+      response = {response:"No reply!"}
+      return response.to_json
+    else
+    return selected.appointments.order("created_at DESC").all.to_json
+    end
+  end
+
+  get "/mynotification/:id" do
+    selected = Doctor.find(params[:id])
+    if selected.nil?
+      response = {response:"No reply!"}
+      return response.to_json
+    else
+    return selected.notifications.all.to_json
+    end
 
   end
+
+
 
 
 
