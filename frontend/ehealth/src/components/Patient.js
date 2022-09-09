@@ -3,9 +3,9 @@ import React from "react";
 
 
 
-function Patient ({patient,setdata}) {
+function Patient ({patient,setdata,setvisibility}) {
     function handle (){
-        // setvisibility((visibility) => !visibility)
+        setvisibility((visibility) => !visibility)
         setdata(patient)
         console.log(patient)
         

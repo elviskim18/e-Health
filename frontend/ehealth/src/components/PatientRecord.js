@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 import Patient from "./Patient";
 
@@ -10,10 +10,12 @@ const logo = require('../images/img4.png')
 
 
 
-function PatientRecord ({patients, getSearch, }){
+function PatientRecord ({patients, getSearch, updatePatient, deletePatient }){
     const [searchvalue, setsearchvalue] = useState("")
     const [data, setdata] = useState({})
-    let navigate = useNavigate()
+    const [view ,setview] = useState(false)
+    const [visibility ,setvisibility] = useState(true)
+    // let navigate = useNavigate()
     
    
 
@@ -39,8 +41,17 @@ function PatientRecord ({patients, getSearch, }){
         console.log(data)
         updatePatient(data.id,data)
         alert("User successfully Edited!")
-        navigate("/patientrecords")
+        // navigate("/home/dashboard")
+        setvisibility((visibility) => !visibility)
     }
+
+      //handle delete
+      function handleDelete (){
+        deletePatient(data.id)
+        alert("User deleted Successfully")
+        setdata("")
+        setvisibility((visibility) => !visibility)
+      }
 
 
 
@@ -60,24 +71,30 @@ function PatientRecord ({patients, getSearch, }){
             <div className="cont">
                 <ul className="records">
                     {patients?.map((patient)=> (
-                        <Patient  key={patient.id} patient={patient} setdata={setdata}/>
+                        <Patient  key={patient.id} patient={patient} setdata={setdata} setvisibility={setvisibility}/>
                         
 
                     ))}
                 </ul>
-                <div className="disp">
+                <div className="disp" style={visibility? {display:"none"} : {display:"block"}}>
 
                     <h3>{data.name}</h3>
                     <p>GENDER:  {data.gender}</p>
-                    <p>DATE OF BIRTH: {data.dob}</p>
+                    <p>DATE OF BIRTH: {data.date_of_birth}</p>
+                    <p>TELEPHONE NUMBER: {data.telephone_number}</p>
                     <p>WEIGHT: {data.weight}</p>
-                    <p>BLOODGROUP : {data.bloodgroup}</p>
+                    <p>NATIONAL ID: {data.national_id}</p>
+                    <p>BLOODGROUP : {data.bloodtype}</p>
                     <p>SYMPTOMS: {data.symptoms}</p>
                     <p>DIAGNOSIS: {data.diagnosis}</p>
-                    <button >UPDATE</button>
-                    {/* <button onClick={handleDelete}>DELETE</button> */}
+                    
+                    <button onClick={() =>{
+                        setview((view) => !view)
+                        
+                        } }>UPDATE</button>
+                    <button onClick={handleDelete}>DELETE</button>
 
-                    <form style={view? {display:"block"} : {display: "none"}} onSubmit={handleEdit}>
+                    <form style={view? {display:"block"} : {display: "none"}}  onSubmit={handleEdit}>
                         <div className="styleform">
     
                             <label>NAME
@@ -86,17 +103,20 @@ function PatientRecord ({patients, getSearch, }){
                             <label>GENDER
                             <input value={data.gender} type="text" name="gender" onChange={handleChange}/>
                             </label>
-                            <label>CONTACT
-                                <input value={data.number} type="text" name="number" onChange={handleChange}/>
+                            <label>TELEPHONE NUMBER
+                                <input value={data.telephone_number} type="text" name="telephone_number" onChange={handleChange}/>
+                            </label>
+                            <label>NATIONAL ID
+                                <input value={data.national_id} type="text" name="national_id" onChange={handleChange}/>
                             </label>
                             <label>DOB
-                                <input value={data.dob} type="date" name="dob" onChange={handleChange}/>
+                                <input value={data.date_of_birth} type="date" name="date_of_birth" onChange={handleChange}/>
                             </label>
                             <label>WEIGHT
                                 <input value={data.weight} type="text" name="weight" onChange={handleChange} />
                             </label>
                             <label>BLOODGROUP
-                                <input value={data.bloodgroup} type="text" name="bloodgroup" onChange={handleChange}/>
+                                <input value={data.bloodtype} type="text" name="bloodtype" onChange={handleChange}/>
                             </label>
                             <label>SYMPTOMS
                                 <input value={data.symptoms} type="text" name="symptoms" onChange={handleChange}/>

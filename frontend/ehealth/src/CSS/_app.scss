@@ -64,10 +64,13 @@
       position: absolute;
       top: 280px;
       right: 300px;
-    display: flex;
-    flex-direction: column;
+      display: flex;
+      flex-direction: column;
     .submit{
       background-color: #9ba8d8;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
     }
     input{
       border-radius: 10px;

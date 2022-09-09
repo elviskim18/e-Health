@@ -52,10 +52,25 @@
             padding: 10px;
         }
         button{
-            padding: 10px;
+            padding: 10PX;
+            margin-right: 8PX;
             margin-top: 15px;
             background-color: #3e8e7a;
             border: none;
+        }
+        .styleform{
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            label{
+                padding-left: 10px;
+            }
+            input{
+                margin-left: 10px;
+                margin-bottom: 10px;
+                background-color: #ebfbfb;
+                color: black;
+            }
         }
     }
 

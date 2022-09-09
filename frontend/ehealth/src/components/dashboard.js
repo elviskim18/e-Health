@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 
 const logo = require('../images/img2.png')
 
-
 const logedInfo =JSON.parse(localStorage.getItem("logedUser"))
+
 
 
 
@@ -17,6 +17,7 @@ function Dashboard ({patients}){
     const[countnurses, setcountnurses] = useState(0)
     const[countappointments, setcountappointments] = useState(0)
     const [notifications, setNotifications] = useState([]);
+    // const [account ,setaccount] = useState({})
     const navigate = useNavigate()
 
     
@@ -43,7 +44,9 @@ function Dashboard ({patients}){
     //useeffect
    
     useEffect(() =>{
-        // eslint-disable-next-line
+        
+        
+        // setaccount(logedInfo)
 
         axios.get("http://localhost:9292/alldoctors")
         .then(resp => {
@@ -73,6 +76,7 @@ function Dashboard ({patients}){
         }
 
         getNotifications(logedInfo?.id);
+        
   
     },[])
     

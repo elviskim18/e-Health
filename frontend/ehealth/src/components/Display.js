@@ -43,7 +43,7 @@ function Display({logedin}) {
   //update
   const updatePatient = async(id,object) =>{
     try {
-        await axios.patch(`${url}/${id}`,object)
+        await axios.patch(`http://localhost:9292/updatepatient/${id}`,object)
         .then((res)=> getPatients())
         // setpatients([...patients,object])
     }
@@ -57,7 +57,7 @@ function Display({logedin}) {
     function deletePatient (id){
         let update = patients.filter((pat) => pat.id !== id)
         setPatients(update);
-        axios.delete(`${url}/${id}`)
+        axios.delete(`http://localhost:9292/deletepatient/${id}`)
         
 
     }
@@ -75,7 +75,7 @@ function Display({logedin}) {
       <Routes>
         <Route
           path="/patientrecords"
-          element={<PatientRecord patients={patients} getSearch={getSearch} updatePatient={updatePatient}deletePatient={deletePatient}/>}
+          element={<PatientRecord patients={patients} getSearch={getSearch} updatePatient={updatePatient} deletePatient={deletePatient}/>}
         />
 
         <Route

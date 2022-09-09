@@ -11,13 +11,13 @@ function Newpatient ({addPatient}){
     const [newInfo, setnewInfo] = useState({
         name: "",
         gender: "",
-        number: "" ,
-        dob: "",
+        telephone_number: "" ,
+        date_of_birth: "",
         weight: "",
-        bloodgroup: "",
+        bloodtype: "",
         symptoms: "",
         diagnosis:"",
-        nationalId:""
+        national_id:""
     })
 
     let navigate = useNavigate();
@@ -52,10 +52,10 @@ function Newpatient ({addPatient}){
             </div>
             <form onSubmit={handleNew}>
                 <input type="text" placeholder="Full Names" name="name" value={newInfo.name} onChange={handleChange}/>
-                <input type="text" placeholder="Telephone Number" name="number" value={newInfo.number} onChange={handleChange}/>
-                <input type="date"  name="dob" placeholder="DOB" value={newInfo.dob} onChange={handleChange}/>
+                <input type="text" placeholder="Telephone Number" name="telephone_number" value={newInfo.telephone_number} onChange={handleChange}/>
+                <input type="date"  name="date_of_birth" placeholder="date_of_birth" value={newInfo.date_of_birth} onChange={handleChange}/>
                 <input type="number" placeholder="Weight" name="weight" value={newInfo.weight} onChange={handleChange} />
-                <input type="number" placeholder="National Id" name="nationalId" value={newInfo.nationalId} onChange={handleChange} />
+                <input type="number" placeholder="National Id" name="national_id" value={newInfo.national_id} onChange={handleChange} />
                 <label>Gender
                     <select id="gender" name="gender" value={newInfo.gender} onChange={handleChange}>
                         <option value="male">Male</option>
@@ -64,7 +64,7 @@ function Newpatient ({addPatient}){
                 </label>
                
                 <label>Bloodtype
-                    <select id="blood" name="bloodgroup" value={newInfo.bloodgroup} onChange={handleChange} >
+                    <select id="blood" name="bloodtype" value={newInfo.bloodtype} onChange={handleChange} >
                         <option value="a">A</option>
                         <option value="b">B</option>
                         <option value="ab">AB</option>
