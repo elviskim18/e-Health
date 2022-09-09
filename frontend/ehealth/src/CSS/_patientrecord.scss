@@ -19,7 +19,7 @@
     }
 
     form{
-        background-color: yellow;
+      
         padding: 40px;
         input{
             padding: 15px 40px;
@@ -40,9 +40,23 @@
         flex-direction: row;
     }
     .disp{
-        background-color: aqua;
+        margin-left: 20px;
+        margin-right: 20px;
+        background-color: #ebfbfb;
         width: 50%;
         padding-left: 10px;
+        h3{
+            text-align: center;
+        }
+        p{
+            padding: 10px;
+        }
+        button{
+            padding: 10px;
+            margin-top: 15px;
+            background-color: #3e8e7a;
+            border: none;
+        }
     }
 
  

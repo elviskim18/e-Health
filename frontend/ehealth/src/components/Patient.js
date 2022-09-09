@@ -3,11 +3,16 @@ import React from "react";
 
 
 
-function Patient ({patient}) {
-    return ( 
-        // <Link to={`/movies/${movieID}`}>{movies[movieID].title}</Link>
+function Patient ({patient,setdata}) {
+    function handle (){
+        // setvisibility((visibility) => !visibility)
+        setdata(patient)
+        console.log(patient)
         
-        <li key={patient.id}>
+    }
+    return ( 
+       
+        <li key={patient.id} onClick={handle}>
            {patient.name}
         </li>
     )

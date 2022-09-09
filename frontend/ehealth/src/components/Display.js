@@ -5,14 +5,10 @@ import Dashboard from "./dashboard";
 import Newpatient from "./Newpatient";
 import PatientRecord from "./PatientRecord";
 import axios from "axios";
-// import { account } from "./Main";
+
 
 function Display({logedin}) {
-  // const log = useContext(account)
-  // console.log(log)
-
-//   const [acc, setaccount] = useState({});
-//   console.log(acc);
+  
   const [patients, setPatients] = useState([]);
   
   
@@ -44,18 +40,33 @@ function Display({logedin}) {
     setPatients([...patients, newUser]);
   }
 
+  //update
+  const updatePatient = async(id,object) =>{
+    try {
+        await axios.patch(`${url}/${id}`,object)
+        .then((res)=> getPatients())
+        // setpatients([...patients,object])
+    }
+    catch(error){
+        console.error(error)
+    }
+
+  }
+
+    //delete
+    function deletePatient (id){
+        let update = patients.filter((pat) => pat.id !== id)
+        setPatients(update);
+        axios.delete(`${url}/${id}`)
+        
+
+    }
+
   
 
   useEffect(() => {
 
-    
-
-   
-   
-
     getPatients();
-    
-    
     
   }, []);
 
@@ -64,7 +75,7 @@ function Display({logedin}) {
       <Routes>
         <Route
           path="/patientrecords"
-          element={<PatientRecord patients={patients} getSearch={getSearch} />}
+          element={<PatientRecord patients={patients} getSearch={getSearch} updatePatient={updatePatient}deletePatient={deletePatient}/>}
         />
 
         <Route
