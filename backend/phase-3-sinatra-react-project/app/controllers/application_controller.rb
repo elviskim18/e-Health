@@ -91,6 +91,25 @@ class ApplicationController < Sinatra::Base
 
   end
 
+  patch '/updatepatient/:id' do
+    patient = Patient.find(params[:id])
+    hash = params.reject { |k, v| v.blank? }
+    updated = patient.update(hash)
+    return updated.to_json
+  end
+
+  delete '/deletepatient/:id' do
+    patient = Patient.find(params[:id])
+    if patient.nil?
+      response = {response:"No reply"}
+      return response.to_json
+    else
+      patient.destroy
+      patient.to_json
+    end
+
+  end
+
 
 
 
