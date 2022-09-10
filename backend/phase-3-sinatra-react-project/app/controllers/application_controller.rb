@@ -110,6 +110,11 @@ class ApplicationController < Sinatra::Base
 
   end
 
+  delete '/removenotification/:id' do
+    note = Doctor.notifications.find(params[id])
+    note.destroy
+  end
+
 
 
 
