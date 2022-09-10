@@ -5,7 +5,7 @@
 
 
 ## PROJECT DESCRIPTION
-- E-AFYA: is a web application that provides a hospital with tools to manage patients records easily. I helps doctors check their patient records and also appointments they currently have
+- E-AFYA is a web application that provides a hospital with tools to manage patients records easily. It helps doctors check their patient records and also appointments they currently have
 
 
 ## Screenshots
@@ -44,7 +44,7 @@ languages used are:
 
 ### Features
 * As a user(doctor) you are able to:
-    - Login as a doctor
+    - Login  and logout as a doctor
     - Enroll a new patient
     - View all the patients in the system
     - Edit a patients record
@@ -71,7 +71,7 @@ The site uses React to render the frontend and uses active records to interact w
 
 #### Set up
 clone the repo using the command
-- $git clone https://github.com/elviskim18/E-AFYA.git
+- $git clone https://github.com/elviskim18/e-Health.git
 change directory using command
 - $cd backend/phase-3-sinatra-react-project
 - run bundle exec run server in the terminal
@@ -87,7 +87,8 @@ change directory using command
 
 ***
 ## How to use the project
-The project folder os divided into two folders mails **backend** and **frontend**. The backend folder contains several folders. The app folder contains the models and controllers for the backend. It also has a db folder that contains the active record migrations.
+The project folder is divided into two folders mainly **backend** and **frontend**. The backend folder contains several folders. The app folder contains the models and controllers for the backend. It also has a db folder that contains the active record migrations together with the seed files.
+
 The **frontend** contains several necessary folders. **public** contains the main index file that all the app runs from. The **src** folder contains the **components** folder that holds all the components running our SPA. We also have a CSS folder that holds **SASS** files ment for styling our components.
 ***
 ### Contributing to the project
