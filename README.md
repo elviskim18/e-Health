@@ -87,7 +87,7 @@ change directory using command
 
 ***
 ## How to use the project
-The project folder is divided into two folders mainly **backend** and **frontend**. The backend folder contains several folders. The app folder contains the models and controllers for the backend. It also has a db folder that contains the active record migrations together with the seed files.
+The project folder is divided into two folders, mainly **backend** and **frontend**. The backend folder contains several folders. The app folder contains the models and controllers for the backend. It also has a db folder that contains the active record migrations together with the seed files.
 
 The **frontend** contains several necessary folders. **public** contains the main index file that all the app runs from. The **src** folder contains the **components** folder that holds all the components running our SPA. We also have a CSS folder that holds **SASS** files ment for styling our components.
 ***
@@ -96,7 +96,7 @@ Fork the repo. Create a new branch in your terminal(git checkout -b improve-feat
 
 ***
 ## Copyright
- Copyright(c)[2022][ELVIS KIMANI]
+ Copyright(c) [2022] [ELVIS KIMANI]
 
 ***
 ## Licence
