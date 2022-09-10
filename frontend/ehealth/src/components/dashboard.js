@@ -33,13 +33,15 @@ function Dashboard ({patients}){
         navigate("/login")
     }
 
-        //delete notification
-    function deleteNotification(id) {
-        let update = patients.filter((pat) => pat.id !== id);
-        setNotifications(update);
-        axios.delete(`http://localhost:9292/patients/${id}`);
-        alert("Notification deleted");
-    }
+         //delete notification
+         function deleteNotification(id) {
+            let update = patients.filter((pat) => pat.id !== id);
+            setNotifications(update);
+            axios.delete(`http://localhost:9292/removenotification/${id}`);
+            alert("Notification deleted");
+        }
+
+   
 
     //useeffect
    
