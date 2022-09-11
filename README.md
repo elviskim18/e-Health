@@ -82,7 +82,11 @@ change directory using command
 
 
 #### live link
- - run the following live link in your browser  https://e-afaya.herokuapp.com/
+ - run the following live link in your browser  
+ - To get login check the doctors database or register 
+ - You can test out logins with this:
+ - username : faithneema@gmail.com
+ - password : 333
 
 
 ***

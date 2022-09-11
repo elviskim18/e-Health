@@ -111,8 +111,9 @@ class ApplicationController < Sinatra::Base
   end
 
   delete '/removenotification/:id' do
-    note = Doctor.notifications.find(params[id])
+    note = Notification.find(params[:id])
     note.destroy
+    note.to_json
   end
 
 
