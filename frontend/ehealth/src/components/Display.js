@@ -14,7 +14,7 @@ function Display({logedin}) {
   
   const url = "http://localhost:9292/patients";
 
-  //get patient records
+  //get patient records when page loads
   function getPatients() {
     axios.get(url).then((resp) => {
       const pat = resp.data;
